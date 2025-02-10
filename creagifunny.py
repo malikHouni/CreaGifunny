@@ -70,7 +70,7 @@ def add_text_to_gif(gif_url, text, position, font_size, color):
 
     # Save GIF using imageio (better compression & quality)
     output_gif = BytesIO()
-    imageio.mimsave(output_gif, frames, format="GIF", duration=gif.info.get("duration", 100) / 500, loop=0)
+    imageio.mimsave(output_gif, frames, format="GIF", duration=gif.info.get("duration", 100) / 300, loop=0)
     output_gif.seek(0)
     return output_gif
 
@@ -89,10 +89,10 @@ overlay_text = st.text_input("Enter text to overlay", "Goku Analyst + Vegeta Eng
 position = st.selectbox("Choose text position", ["Top Left", "Top Right", "Bottom Left", "Bottom Right"])
 
 # Font size selection
-font_size = st.slider("Font Size", min_value=10, max_value=80, value=18)
+font_size = st.slider("Font Size", min_value=10, max_value=80, value=21)
 
 # Color selection
-text_color = st.color_picker("Pick a text color", "#000000")
+text_color = st.color_picker("Pick a text color", "#FF0000")
 
 # Generate GIF button
 if st.button("Generate GIF"):
