@@ -36,7 +36,7 @@ def add_text_to_gif(gif_url, text, position, font_size, color):
             draw = ImageDraw.Draw(text_layer)
 
             # Load font
-            font = ImageFont.load_default()
+            font = ImageFont.truetype("arial.ttf", font_size)
 
             # Get text size
             bbox = draw.textbbox((0, 0), text, font=font)
