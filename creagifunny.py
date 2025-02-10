@@ -35,11 +35,9 @@ def add_text_to_gif(gif_url, text, position, font_size, color):
             text_layer = Image.new("RGBA", frame.size, (255, 255, 255, 0))
             draw = ImageDraw.Draw(text_layer)
 
-            # Load bold font if available, otherwise fake bold effect
-            try:
-                font = ImageFont.truetype("arialbd.ttf", font_size)  # Try real bold font
-            except IOError:
-                font = ImageFont.truetype("arial.ttf", font_size)  # Use normal font
+            font_path = "fonts/Roboto-Italic-VariableFont_wdth,wght.ttf"  # Mets le chemin correct
+            font = ImageFont.truetype(font_path, font_size)
+
 
             # Get text size
             bbox = draw.textbbox((0, 0), text, font=font)
