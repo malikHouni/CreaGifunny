@@ -77,8 +77,9 @@ def add_text_to_gif(gif_url, text, position, font_size, color):
 
 
 # Streamlit UI
-st.title("GIF Generator with Custom Text Overlay 🎨")
-
+st.title("CreaGIFunny")
+st.subheader("GIF Generator with Custom Text Overlay 🎨")
+st.subheader("by Malik Houni")
 # User input for GIF search
 query = st.text_input("Enter a GIF search term (e.g., 'funny cat')", "Goku Vegeta Fusion")
 
